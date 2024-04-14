@@ -1,32 +1,42 @@
-import 'package:financa/ui/home/components/body_home_page_gastos_components.dart';
-import 'package:financa/ui/home/components/header_home_page_components.dart';
-import 'package:financa/ui/home/home_presenter.dart';
+import 'package:financa/presenter/home/home_state.dart';
 import 'package:flutter/material.dart';
 
-import '../../domain/enum/meses_enum.dart';
+import '../../core/presenter/app_state.dart';
+import 'components/body_home_page_components.dart';
+import 'components/header_home_page_components.dart';
 
-class HomePage extends StatelessWidget {
-  HomePresenter homepresenter;
-  HomePage({super.key, required this.homepresenter});
-
-  int _selectedIndex = 0;
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends AppState<HomePage, HomePageState> {
+  @override
   Widget build(BuildContext context) {
-    List meses = EnumMeses.values
-        .map((e) => {"id": e.id, "descricao": e.descricao})
-        .toList();
     return Scaffold(
+      backgroundColor: Color.fromRGBO(0, 184, 148, 1),
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(0, 184, 148, 1),
+        leading: Container(
+          child: Icon(Icons.list),
+        ),
+        actions: [
+          const Padding(
+            padding: EdgeInsets.all(10),
+            child: CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Icon(Icons.person),
+            ),
+          ),
+        ],
         elevation: 0,
-        backgroundColor: Colors.white,
       ),
       body: Column(
         children: [
-          HeaderHomePageComponents(
-            meses: meses,
-          ),
-          BodyHomePageGastosComponents()
+          HeaderHomePageComponents(),
+          const BodyHomePageComponents(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -40,7 +50,7 @@ class HomePage extends StatelessWidget {
               width: 60, // Largura do container
               height: 60, // Altura do container
               decoration: const BoxDecoration(
-                color: Colors.blue, // Cor de fundo
+                color: Color.fromRGBO(0, 184, 148, 1), // Cor de fundo
                 shape: BoxShape.circle, // Forma circular
                 boxShadow: [
                   BoxShadow(
@@ -62,7 +72,7 @@ class HomePage extends StatelessWidget {
             label: 'Histórico',
           ),
         ],
-        currentIndex: _selectedIndex,
+        currentIndex: 1,
         selectedItemColor: Colors.amber[800],
         showSelectedLabels: true, // Mostra o rótulo apenas do item selecionado
         showUnselectedLabels:

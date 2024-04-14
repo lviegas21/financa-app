@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import 'main/home/home_page_factory.dart';
+import 'core/modules/app_modules.dart';
 
 void main() {
-  runApp(const FinancaApp());
+  runApp(
+    ModularApp(
+      module: AppModule(),
+      child: const FinancaApp(),
+    ),
+  );
 }
 
 class FinancaApp extends StatelessWidget {
@@ -13,15 +18,16 @@ class FinancaApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
+      title: 'Carteira Cest',
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      getPages: [
-        GetPage(
-            name: '/',
-            page: makeHomePageFactory,
-            transition: Transition.circularReveal),
-      ],
+      routeInformationParser: Modular.routeInformationParser,
+      routerDelegate: Modular.routerDelegate,
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.blue,
+        brightness: Brightness.light,
+      ),
     );
   }
 }
