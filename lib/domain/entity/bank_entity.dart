@@ -1,28 +1,22 @@
 import 'package:equatable/equatable.dart';
 
 class BankEntity extends Equatable {
-  final List<String> banks;
+  final int id;
+  final String nomeBank;
 
-  const BankEntity({required this.banks});
+  const BankEntity({required this.id, required this.nomeBank});
 
   factory BankEntity.fromMap(Map<String, dynamic> map) {
-    return BankEntity(banks: List<String>.from(map['banks'] ?? []));
+    return BankEntity(id: map['id'], nomeBank: map['nomeBank']);
+  }
+
+  Map<String, dynamic> toMap() {
+    return {'id': id, 'nomeBank': nomeBank};
   }
 
   @override
-  List<Object?> get props => [banks];
+  List<Object?> get props => [id, nomeBank];
 
   //@override
   //bool get stringify => true;
 }
-
-const bankbanksdefined = BankEntity(banks: [
-  'Caixa',
-  'Nubank',
-  'Santander',
-  'Bradesco',
-  'Inter',
-]);
-
-final banksaupdated =
-    BankEntity(banks: [...bankbanksdefined.banks, 'New Bank']);
