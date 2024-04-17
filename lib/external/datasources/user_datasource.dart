@@ -28,6 +28,12 @@ class UserDatasource {
           cpf: maps[index]['cpf'],
           email: maps[index]['email'],
           telefone: maps[index]['telefone'],
+          receita: maps[index]['receita'],
+          saldo: maps[index]['saldo'],
+          despesas: maps[index]['despeesas'],
+          investimentos: maps[index]['investimentos'],
+          data: maps[index]['data'],
+          status: maps[index]['status'],
           ativo: maps[index]['ativo']);
     });
   }

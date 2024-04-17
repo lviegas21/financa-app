@@ -6,6 +6,14 @@ class UserEntity extends Equatable {
   final String cpf;
   final String email;
   final String telefone;
+
+  final double receita;
+  final double saldo;
+  final double despesas;
+  final double investimentos;
+  final DateTime data;
+  final List<String> status;
+
   final int ativo;
 
   const UserEntity(
@@ -14,6 +22,12 @@ class UserEntity extends Equatable {
       required this.cpf,
       required this.email,
       required this.telefone,
+      required this.receita,
+      required this.saldo,
+      required this.despesas,
+      required this.investimentos,
+      required this.data,
+      required this.status,
       required this.ativo});
 
   factory UserEntity.fromJson(Map<String, dynamic> json) {
@@ -23,6 +37,12 @@ class UserEntity extends Equatable {
         cpf: json['cpf'],
         email: json['email'],
         telefone: json['telefone'],
+        receita: json['receita'],
+        saldo: json['saldo'],
+        despesas: json['despesa'],
+        investimentos: json['investimentos'],
+        data: json['data'],
+        status: json['status'],
         ativo: json['ativo']);
   }
 
@@ -35,7 +55,13 @@ class UserEntity extends Equatable {
       'nome': nome,
       'cpf': cpf,
       'email': email,
-      'telefone': telefone
+      'telefone': telefone,
+      'saldo': saldo,
+      'despesa': despesas,
+      'investimentos': investimentos,
+      'data': data,
+      'status': status,
+      'ativo': ativo
     };
   }
 
