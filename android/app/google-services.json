@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "477902167096",
+    "project_id": "financa-204e5",
+    "storage_bucket": "financa-204e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477902167096:android:af3213f6eb6e05a1059acd",
+        "android_client_info": {
+          "package_name": "com.example.financa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwKQndltdiR-JQ9E7wg-6VNbKCxBSH-4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

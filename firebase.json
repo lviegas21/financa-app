@@ -1,0 +1,22 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "financa-204e5",
+                    "appId": "1:477902167096:android:af3213f6eb6e05a1059acd",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "financa-204e5",
+                    "configurations": {
+                        "android": "1:477902167096:android:af3213f6eb6e05a1059acd",
+                        "ios": "1:477902167096:ios:dbcf5a0313b8b0d2059acd"
+                    }
+                }
+            }
+        }
+    }
+}
